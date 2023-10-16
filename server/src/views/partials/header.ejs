@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="icono-foro.png" type="image/svg+xml">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Tu Foro</title>
+</head>
+
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="check2" viewBox="0 0 16 16">
+    <path
+      d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z">
+    </path>
+  </symbol>
+  <symbol id="circle-half" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+  </symbol>
+  <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    <path
+      d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z">
+    </path>
+    <path
+      d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z">
+    </path>
+  </symbol>
+  <symbol id="sun-fill" viewBox="0 0 16 16">
+    <path
+      d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z">
+    </path>
+  </symbol>
+</svg>
+<div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+  <button class="btn btn-warning py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
+    aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (dark)">
+    <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+      <use href="#moon-stars-fill"></use>
+    </svg>
+    <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+    <li>
+      <button type="button" class="dropdown-item d-flex align-items-center" data-bs-toggle="theme" data-bs-theme="light"
+        aria-pressed="false">
+        <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+          <use href="#sun-fill"></use>
+        </svg>
+        Light
+        <svg class="bi ms-auto d-none" width="1em" height="1em">
+          <use href="#check2"></use>
+        </svg>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="dropdown-item d-flex align-items-center" data-bs-toggle="theme" data-bs-theme="dark"
+        aria-pressed="false">
+        <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+          <use href="#moon-stars-fill"></use>
+        </svg>
+        Dark
+        <svg class="bi ms-auto d-none" width="1em" height="1em">
+          <use href="#check2"></use>
+        </svg>
+      </button>
+    </li>
+    <li>
+      <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme="auto"
+        data-bs-toggle="theme" aria-pressed="true">
+        <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+          <use href="#circle-half"></use>
+        </svg>
+        Auto
+        <svg class="bi ms-auto d-none" width="1em" height="1em">
+          <use href="#check2"></use>
+        </svg>
+      </button>
+    </li>
+  </ul>
+</div>
+<header>
+  <div class="collapse text-bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4>Bienvenido a Tu Foro - Tu Espacio Personal</h4>
+          <p>
+            Tu Foro te da la bienvenida a este espacio personal dedicado para ti. Es un lugar donde tu podras compartir sus pensamientos, intereses y experiencias con otros entusiastas que comparten tu pasión.
+          </p>
+          <p>
+            Este foro es un rincón virtual donde los visitantes pueden conectarse, explorar temas y participar en conversaciones significativas. Si eres un apasionado de Tu foro o simplemente deseas ser parte de esta comunidad, estás en el lugar adecuado.
+          </p>
+          <p>
+            Tu foro te invita a explorar los diferentes temas, unirte a las conversaciones y compartir tus valiosas ideas. La diversidad de perspectivas enriquece este espacio personal. ¡Tu participación es fundamental!
+          </p>
+          <p>
+            Si tienes alguna pregunta, sugerencia o simplemente deseas saludar, no dudes en ponerte en contacto. Ruben está emocionado de tenerte aquí y espera que disfrutes de tu tiempo en este foro personal.
+          </p>
+        </div>
+        <div class="col-12 col-md-4 md-1 py-4 contacto ">
+          <h4>Contacto</h4>
+          <ul class="list-unstyled">
+            <li class="pb-2">
+              <a href="#" target="_blank" class="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+                </svg>
+                <p>e-mailEjemplo@gmail.com</p>
+              </a>
+            </li>
+            <li class="pb-2">
+              <a href="#" target="_blank" class=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-telephone-outbound" viewBox="0 0 16 16">
+                  <path
+                    d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM11 .5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-4.146 4.147a.5.5 0 0 1-.708-.708L14.293 1H11.5a.5.5 0 0 1-.5-.5z" />
+                </svg>
+                <p>
+                  +54254289486
+                </p>
+              </a>
+            </li>
+            <li class="pb-2"><a href="#" target="_blank" class="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-pin-map-fill" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8l3-4z" />
+                  <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z" />
+                </svg>
+                <p>Avenida 123, Buenos Aires</p>
+              </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar" data-bs-theme="theme">
+    <div class="container">
+      <div class="navbar-brand d-flex align-items-center logo-header">
+      <a href="#">
+       <img src="icono-foro.png" class="img-logo" alt="imagen del logo del header">
+      </a>
+      <p>Tu Foro</p>
+    </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+        aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<body>

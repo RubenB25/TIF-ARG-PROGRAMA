@@ -1,0 +1,100 @@
+<%- include('partials/header') -%>
+
+    <main class="d-flex flex-column align-items-end">
+        <section class="py-5 text-center container">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 mx-auto">
+                    <h1 class="fw-light">¡Tu propio foro!</h1>
+                    <p class="lead text-body-secondary">Agrega las entradas que quieras, dales personalidad agregando
+                        imágenes que la representen.</p>
+                    <p>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"
+                            id="btn-new">
+                            Agregar entrada
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="row justify-content-center" id="container-row">
+                <% tasks.forEach(task=> { %>
+                    <div class="col-12 col-md-12 col-lg-10 col-xl-6" id="cards">
+                        <div class="card m-3 p-1" style="max-width: 750px;" data-id="<%= task.id %>">
+                            <div class="row g-1" id="row-h">
+                                <div class="col-5 col-md-4 col-lg-5" id="contenedor">
+                                    <img src="<%= task.poster %>" class="img-fluid object-fit-contain" alt="nueva">
+                                </div>
+                                <div class="col-7 col-md-8 col-lg-7">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <%= task.title %>
+                                        </h5>
+                                        <p class="card-text">
+                                            <%= task.description %>
+                                        </p>
+                                    </div>
+                                    <div class="caja-botones">
+                                        <p class="fecha-creacion">Posted: <%= task.createdAt%>
+                                        </p>
+                                        <div class="botones">
+
+                                            <button class="btn btn-sm btn-outline-secondary float-end"
+                                                id="btn-edit">Editar</button>
+                                            <button class="btn btn-sm btn-outline-secondary float-start"
+                                                id="btn-view">Leer</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+
+        <!-- modal Main-->
+        <div class="modal fade show custom-modal" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-modal="true" role="dialog">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                <div class="modal-content">
+                    <form id="formulario">
+                        <div class="modal-header">
+                            <div class="mb-3" id="ititle">
+                                <label for="inputTitle" class="col-form-label">Titulo:</label>
+                                <input type="text" class="form-control" id="inputTitle" required>
+                            </div>
+                            <h1 class="modal-title fs-5" id="inputTitleView"></h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <section id="contenedor-img"><img id="modalImage" src=""
+                                        class="img-fluid d-flex justify-content-center align-items-center"
+                                        alt="Imagen de la Tarea"></section>
+                                <label for="inputDescription" class="col-form-label">Descripción:</label>
+                                <p type="text" class="form-control" id="inputDescription"></p>
+                            </div>
+                            <div class="mb-3" id="iposter">
+                                <label for="inputPoster" class="col-form-label">PosterURL:</label>
+                                <input type="url" class="form-control" id="inputPoster">
+
+                            </div>
+
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn btn-outline-danger" id="btn-delete"></button>
+                                <button type="submit" class="btn btn-primary" id="btn-save">Guardar cambios</button>
+                            </div>
+                        </div>
+                </div>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <%- include("partials/footer") -%>
